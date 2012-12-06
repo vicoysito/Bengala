@@ -65,6 +65,7 @@
                 href, 
                 type, 
                 title,
+                desc,
                 str,
                 emb,
                 ret;
@@ -88,9 +89,9 @@
             }
 
             if (title === '' && selectedOpts.orig && selectedOpts.titleFromAlt) {
-                alert("entro");
-                                title = selectedOpts.orig.attr('alt');
-                                alert(title);
+                                title = selectedOpts.orig.attr('title');
+                                
+                                
             }
 
             href = selectedOpts.href || (obj.nodeName ? $(obj).attr('href') : obj.href) || null;
@@ -310,8 +311,8 @@
             $("<img />").attr({
                 'id' : 'fancybox-img',
                 'src' : imgPreloader.src,
-                'alt' : selectedOpts.title,
-                                'facebook':selectedOpts.title
+                'title' : selectedOpts.title,
+                'desc':selectedOpts.orig.attr('desc')
             }).appendTo( tmp );
                         // EDITADO POR VICTOR ESPINOSA
 //                        alert($("#fancybox-img").attr('alt'));
@@ -1038,8 +1039,8 @@
 
 // EDITADO POR VICTOR ESPINOSA
    var _redesSociales ='<div id="_rsBengalaWrapp" style="z-index:4000;top:16px; right:0px;width:103px">';
-    _redesSociales +='<a href="http://www.facebook.com/casabengala.tv" target="_blank"><div class="rsBengala _Rsfb"></div></a>';
-    _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rstw"></div></a>';
+    _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'fb\')"><div class="rsBengala _Rsfb"></div></a>';
+    _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'tw\')"><div class="rsBengala _Rstw"></div></a>';
 //    _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rsin"></div></a>';
 //    _redesSociales +='<a href="http://vimeo.com/casabengala" target="_blank"><div class="rsBengala _Rsvi"></div></a>';
     _redesSociales +='</div>';

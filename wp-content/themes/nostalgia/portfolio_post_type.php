@@ -251,20 +251,20 @@ function portfolio_tab($categories="", $i="", $open="", $default_tab_title="")
 //                                          
 //                                  
                                            $thumbnail_id = get_post_thumbnail_id($post->ID);
-                                            $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
-                                            $thumbnail_image[0]->post_excerpt;
-                
+                                           $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+                                           
+                                           
+                                           // EDITADO POR VICTOR ESPINOSA
+                                           $tituloPost = $thumbnail_image[0]->post_title;
+                                           $descripcionPost = $thumbnail_image[0]->post_content;
+                                           $captionPost = $thumbnail_image[0]->post_excerpt;
 
-    
-                
-                
-                
                                            // FIN DELA EDICION
                                           
                                 $output .= '
                 <li class="' . ($j%2==0 ? 'left' : 'right') . '">
                     <a href="' . ($external_url=="" && $audio_url=="" ? ($iframe_url!="" ? $iframe_url : $large_image_url) : ($audio_url=="" ? $external_url : $audio_url)) . '"' . ($external_url=="" && $audio_url=="" ? ' class="fancybox-' . ($video_url!="" ? 'video' : ($iframe_url!="" ? 'iframe' : 'image')) . '"' : ($audio_url!="" ? ' class="audio-item"' : '')) . ($portfolio_description_location=='lightbox' || $portfolio_description_location=='both' ? ' title="' . esc_attr(get_the_content()) . '"' : '' ) . '>'
-                        . get_the_post_thumbnail($post->ID, $themename . "-portfolio-thumb", array("alt" => get_the_title(), "title" => $thumbnail_image[0]->post_excerpt, "facebook" => $thumbnail_image[0]->post_title )) .
+                        . get_the_post_thumbnail($post->ID, $themename . "-portfolio-thumb", array("alt" => get_the_title(), "title" => $tituloPost , "desc" => $descripcionPost )) .
                         '<span/>
                     </a>
                     <div class="image-list-caption">
@@ -278,7 +278,8 @@ function portfolio_tab($categories="", $i="", $open="", $default_tab_title="")
                 
                 
         $output .= '</ul></div>';
-//        <!--PUERCOS uno'. $thumbnail_image[0]." dos ". $thumbnail_image[0].' -->'
+        $output .= '<!--PUERCOS titulo=>'. $tituloPost .'__descripcion=> '. $descripcionPost .'__caption=>'.$captionPost.' -->';
+//        
     endif;
     return $output;
 }

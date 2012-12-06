@@ -288,7 +288,7 @@
 				{
                                     // EDITADO POR VICTOR ESPINOSA
                                     
-                                    mueveRedesSociales("_rsDerecha","_rsIzquierda");
+                                       mueveRedesSociales(tabToOpen);
                                     
                                     // FIN EDITADO POR VICTOR ESPINOSA
                                     
@@ -313,14 +313,16 @@
 				}
 				else if(tabToOpen=='right')
 				{
-                                    // EDITADO POR VICTOR ESPINOSA
                                     
-                                    mueveRedesSociales("_rsIzquierda","_rsDerecha");
-
+                                     // EDITADO POR VICTOR ESPINOSA
+                                            mueveRedesSociales(tabToOpen);
                                     // FIN EDITADO POR VICTOR ESPINOSA
                                     
 					if(tabOpen=='right')
 					{
+                                   
+                                    
+                                    
 						$this.closeTab(tabOpen,{complete:function() 
 						{
 							$this.openTab(tabToOpen,{complete:function() { $this.doEvent(event); }});
@@ -373,7 +375,6 @@
 		this.isOpen=function()
 		{	
 			if($this.nostalgiaTab.width()==0) {
-                            mueveRedesSociales("_rsDerecha","_rsIzquierda");
                             
                             return(false)
                         };
@@ -932,18 +933,18 @@
         
         // EDITADO POR VICTOR ESPINOSA
 
-	function mueveRedesSociales(clase,claseSustituta){
-                                     
-                                    if( $("#_rsBengalaWrapp").hasClass(clase)){
+	function mueveRedesSociales(tipo){
+                                   
+                                   clase = (tipo!="left")?"_rsDerecha":"_rsIzquierda"
+                                   
                                     $("#_rsBengalaWrapp").fadeOut(500, function(){
-                                    $("#_rsBengalaWrapp").removeClass(clase).addClass(claseSustituta);
+                                    $("#_rsBengalaWrapp").attr("class","");
+                                    $("#_rsBengalaWrapp").addClass(clase);
                                     $("#_rsBengalaWrapp").fadeIn(3000);
-                                    })}
+                                    })
                                      
                                     }
                                     
-      $("#nostalgia-navigation-close-button").on("click",function(){
-          alert("cierro");
-      })                           
+                              
 })(jQuery);
 

@@ -164,10 +164,105 @@ jQuery(document).ready(function($)
                     $("#_rsBengalaWrapp div").hover(function(){$(this).css("background-position","bottom")},function(){$(this).css("background-position","top")});
                    
                    $("#nostalgia-navigation-close-button").on("click",function(){
-                       alert("putso!")
+                              
+                               $("#_rsBengalaWrapp").fadeOut(500, function(){
+                                    $("#_rsBengalaWrapp").attr("class","_rsIzquierda");
+                                    $("#_rsBengalaWrapp").fadeIn(3000);
+                                    })
+                              
                    })
                 
                 
         
         
 });
+
+
+
+// EDITADO POR VICTOR ESPINOSA
+function comparteFb(titulo,desc,imagen){
+  // REFERENCIA
+  // http://developers.facebook.com/docs/reference/dialogs/feed/
+  
+  // variables de prueba DEBEMOS CAMBIARLAS
+
+//  var id= "458358780877780";// ESTE SOLO ES DE EJEMPLO PERO ES LA ID QUE TE DA FACEBOOK  
+//  var link = "https://developers.facebook.com/docs/reference/dialogs/" // PAGINA QUE REFERENCIA EL POST
+//  var picture = "http://knock-factory.com.mx/Bengala/wp-content/uploads/2012/11/Logo-1.png"// RUTA DE LA IMAGEN The picture must be at least 50px by 50px (though minimum 200px by 200px is preferred) 
+//  var name = "Titulo del la liga"// TITULO DEL LINK QUE SE ENVIA LAS LETRAS AZULES
+//  var caption = "Texto de la imagen a compartir" // SUBTITULO DEL LINK QUE SE ENVIA
+//  var description = "Casa Bengala";
+//  var redirect = "http://knock-factory.com.mx/Bengala/"; //PÁGINA A LA QUE SE VA DESPUES DE COMPARTIR 
+
+  var id= "458358780877780";// ESTE SOLO ES DE EJEMPLO PERO ES LA ID QUE TE DA FACEBOOK  
+  var link = "https://developers.facebook.com/docs/reference/dialogs/" // PAGINA QUE REFERENCIA EL POST
+  var picture = imagen // RUTA DE LA IMAGEN The picture must be at least 50px by 50px (though minimum 200px by 200px is preferred) 
+  var name = titulo// TITULO DEL LINK QUE SE ENVIA LAS LETRAS AZULES
+  var caption = "Portafolio CasaBengala.tv" // SUBTITULO DEL LINK QUE SE ENVIA
+  var description = desc;
+  var redirect = "https://mighty-lowlands-6381.herokuapp.com/"; //PÁGINA A LA QUE SE VA DESPUES DE COMPARTIR 
+
+  var url = "https://www.facebook.com/dialog/feed?";
+  url += "app_id="+id+"&";
+  url += "link="+link+"&";
+  url += "picture="+picture+"&";
+  url += "name="+name+"&";
+  url += "caption="+caption+"&";
+  url += "description="+description+"&";
+  url += "redirect_uri="+redirect;
+  
+  window.location.href=url;
+  
+  
+//  window.open(url, "_fbComparte", "menubar=yes,location=no,resizable=no,scrollbars=no,status=yes,width=500,height=400")
+  
+//  return url;
+
+}
+
+function comparteTw(titulo,desc,imagen){
+
+//FORMATO DEL TWITT--->
+//texto por default del twitt https://dev.twitter.com/pages/tweet-button vía @Nombre de la via
+
+var text= titulo+": "+desc;
+var link = imagen //"https%3A%2F%2Fdev.twitter.com%2Fpages%2Ftweet-button&";
+var via="casabengalatv&";
+var counturl = "nombre de la pagina a la que se le agregaran los twitts"
+
+
+    var url = "https://twitter.com/share?";
+    url+= "url="+link
+    url+=   "&via="+via
+    url+=  "&text="+text;
+    url+="&counturl="+counturl;
+    window.open(url, "twitterRs", "width=400, height=350")
+}
+
+
+function _rsCompartir(tipoRed){
+    
+    imgCompartir = document.getElementById("fancybox-img");
+    var titulo = imgCompartir.getAttribute('title');
+    var desc = imgCompartir.getAttribute('desc');
+    var imagen = imgCompartir.getAttribute('src');
+
+
+    switch (tipoRed){
+    
+    case "fb":
+        comparteFb(titulo,desc,imagen)
+    break;
+    
+    
+    case "tw":
+        comparteTw(titulo,desc,imagen)
+    break;
+    
+    default:
+        alert("no se selecciono una red válida")
+        
+    }
+    
+    
+}
