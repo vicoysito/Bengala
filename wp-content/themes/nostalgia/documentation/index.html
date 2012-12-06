@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+
+        <title>Nostalgia - Portfolio WordPress Theme</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        
+        <link rel="stylesheet" type="text/css" href="style/jquery-ui/smoothness/jquery-ui.css"/> 
+        <link rel="stylesheet" type="text/css" href="style/base.css"/> 
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cuprum"/>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
+
+        <script type="text/javascript" src="script/jquery.min.js"></script>
+        <script type="text/javascript" src="script/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="script/main.js"></script>
+
+    </head>
+    
+    <body>
+    
+        <div class="main clear-fix overflow-fix box-center">
+            
+            <div class="header clear-fix overflow-fix">
+                
+                <div class="layout-50-left">
+                    <a href="http://themeforest.net/user/QuanticaLabs?ref=quanticalabs" class="header-logo"></a>
+                </div>
+                
+                <div class="layout-50-right">
+                    
+                    <ul class="no-list header-menu">
+                        <li><a href="http://themeforest.net/user/QuanticaLabs?ref=quanticalabs#from" class="header-menu-contact-us">Contact us</a></li>
+                        <li><a href="http://twitter.com/QuanticaLabs" class="header-menu-twitter"></a></li>
+                        <li><a href="http://themeforest.net/user/QuanticaLabs?ref=quanticalabs" class="header-menu-envato"></a></li>
+                    </ul>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="content">
+                
+                <div class="tabs">
+                    
+                    <ul>
+                        <li><a href="#tab-1">About</a></li>
+                        <li><a href="#tab-2">CSS Styles</a></li>
+                        <li><a href="#tab-3">Structure</a></li>
+                        <li><a href="#tab-4">JS Files</a></li>
+                        <li><a href="#tab-5">Plugins & Shortcodes</a></li>
+                        <li><a href="#tab-7">Languages</a></li>
+                        <li><a href="#tab-8">Credits</a></li>
+						<li><a href="#tab-9">Changelog</a></li>
+                        <li><a href="#tab-10">Support</a></li>
+                    </ul>
+                    
+                    <!-- #### -->
+                    
+                    <div id="tab-1">
+                        
+                        <h1>Nostalgia - Portfolio WordPress Theme</h1>      
+                        
+                        <p>
+							Nostalgia is a portfolio theme - personal or corporate, based on full-screen slider and sliding pages. The template is maintained in a minimalist, contrasting style. Background images kept in retro tones contrast with modern minimalist content. It is possible to add unlimited number of pages in the form of scrolling menu. Template contains typical descriptive pages like about and services, portfolio page with categories based on accordion, build-in lightbox and possibility to play youtube and vimeo videos, main blog page and single post page with categories, comments and lightbox build-in, contact page with map of location and with working contact form. Template fullscreen background will adapt to any screen resolution.
+                        </p>
+						
+						<p><b>Theme Features</b></p>
+                        
+						<ul class="documentation">
+                            <li>jQuery Powered</li>
+							<li>Ajax technology</li>
+							<li>Fullscreen slideshow</li>
+							<li>Background music player</li>
+							<li>Unlimited number of pages</li>
+							<li>Custom theme/single page color from colorpicker</li>
+							<li>6 predefined page icons</li>
+							<li>10 predefined page header icons</li>
+							<li>10 predefined social icons</li>
+							<li>Fully customizable</li>
+							<li>Blog template</li>
+                            <li>Build-in portfolio page template with Lightbox</li>
+							<li>Build-in about page template implemented with shortcode</li>
+							<li>Build-in services page template implemented with shortcode</li>
+							<li>Build-in Google Map shortcode</li>
+                            <li>Working Contact Form with configuration page under <span class="name">Settings</span> submenu</li>
+                            <li>Support for back/next browser buttons</li>
+							<li>Support for SEO links</li>
+                            <li>Font Face Fonts</li>
+                            <li>Valid XHTML code</li>
+                            <li>Documentation included</li>
+						</ul>	
+						
+						<p>
+							On this <a href="http://www.screenr.com/Cp08">video</a> you can see how to activate theme and import dummy-content to it (from included - <span class="name">nostalgia-content.xml</span> file).
+						</p>
+                        
+                    </div>
+                    
+                    <!-- #### -->
+
+                    <div id="tab-2">
+                        
+                        <h1>CSS Styles</h1>
+						<p>The project uses the following cascade of template styles (in order):</p>
+						<ul class="documentation">
+							<li><span class="name">style/jquery.jScrollPane.css</span> - default styles for scrollbars,</li>
+							<li><span class="name">style/jquery.qtip.css</span> - default styles for tooltips,</li>
+							<li><span class="name">style/jquery-ui.css</span> - default styles for UI elements,</li>							
+							<li><span class="name">style/fancybox/jquery.fancybox.css</span> - default styles for fancybox,</li>
+							<li><span class="name">style.css</span> - base styles for whole project.</li>
+						</ul>
+
+                    </div>
+                    
+                    <!-- #### -->
+                    
+                    <div id="tab-3">
+                        
+                        <h1>Theme Structure</h1>
+                        
+                        <p>Project is divided by four main files: index.php, header.php, footer.php and functions.php</p>
+                        
+                        <br/>   
+						<h4>index.php</h4>    
+						<p>
+							It's main project file which calls other. It contains <span class="name">get_header</span> and <span class="name">get_footer</span> calls. 
+							There is also call of the <span class="name">theme_get</span> function, which generate the menu.
+						</p>  
+						
+                        <br/>
+                        <h4>header.php</h4>                        
+						<p>
+							The file contains <span class="name">head</span> section of the html tree structure.
+							You can find here also <span class="name">wp_head</span> call.
+						</p>
+						
+						<br />
+                        <h4>footer.php</h4>                        
+                        <p>
+							The file contains bottom part of the page, including copyright area and footer area.
+							You can find here also <span class="name">wp_footer</span> call.
+						</p>
+						
+						<br />
+                        <h4>funstions.php</h4>                        
+                        <p>
+							The file contains definition/includes of the functions for:
+						</p>
+						<ul class="documentation">
+							<li>contact form, map,</li>
+							<li>portfolio, about, services shortcodes,</li>
+							<li>blog and post sidebars,</li>
+							<li>ajax calls,</li>
+							<li>load javascript and css files,</li>
+							<li>base configuration,</li>
+							<li>menu generation,</li>
+							<li>custom meta box and options pages.</li>
+						</ul>
+                        
+                    </div>
+                    
+                    <!-- #### -->
+                    
+                    <div id="tab-4">
+                        
+                        <h1>Javascript Files</h1>
+						<h4>Plugins and library</h4>
+						<ul class="documentation">
+							<li><span class="name">jQuery (minified)</span> - jQuery JavaScript Library, <a href="http://jquery.com/">http://jquery.com/</a>,</li>
+							<li><span class="name">jQuery UI (minified)</span> - jQuery user interface library, <a href="http://jqueryui.com/">http://jqueryui.com/</a>,</li>
+							<li><span class="name">jQuery Easing v1.3</span> - <a href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a>,</li>
+							<li><span class="name">jQuery BBQ v1.2.1</span>, <a href="http://benalman.com/projects/jquery-bbq-plugin/">http://benalman.com/projects/jquery-bbq-plugin/</a>,</li>
+							<li><span class="name">jQuery blockUI v2.39</span> - <a href="http://malsup.com/jquery/block/">http://malsup.com/jquery/block/</a>,</li>
+							<li><span class="name">jQuery bxSlider v3.0</span> - <a href="http://bxslider.com/">http://bxslider.com/</a>,</li>
+							<li><span class="name">qTip2 (minified)</span> - Pretty powerful tooltips, <a href="http://craigsworks.com/projects/qtip2/">http://craigsworks.com/projects/qtip2/</a>,</li>
+							<li><span class="name">jQuery FancyBox v1.3.4</span> - Simple and fancy lightbox alternative, <a href="http://fancybox.net/">http://fancybox.net/</a>,</li>
+							<li><span class="name">jQuery MouseWheel v3.0.5</span> - <a href="http://brandonaaron.net/code/mousewheel/demos">http://brandonaaron.net/code/mousewheel/demos</a>,</li>
+							<li><span class="name">jScrollPane v2.0.0 (minified)</span> - <a href="http://jscrollpane.kelvinluck.com/">http://jscrollpane.kelvinluck.com/</a>,</li>
+							<li><span class="name">Supersized v3.2.6</span> - Fullscreen Slideshow jQuery Plugin, <a href="http://www.buildinternet.com/project/supersized">http://www.buildinternet.com/project/supersized</a>.</li>
+						</ul>
+                        
+                        <br/>
+						
+						<h4>Other files</h4>
+						<ul class="documentation">
+ 							<li><span class="name">script.js</span> - script contains a few simple functions used in this project,</li>	
+							<li><span class="name">main.js</span> - script contains a call jquery plugins which are used in main page,</li>
+							<li><span class="name">prestige.js</span> - script contains a call jquery plugins which are used in pages.</li>
+						</ul>
+                        
+                    </div>
+                 
+                    <!-- #### -->
+                    
+                    <div id="tab-5">
+                        <h1>Plugins & Shortcodes</h1>
+						<h4>Portfolio</h4>
+						<p>
+							Nostalgia have custom post type for portfolio. You can manage portfolio items in your admin area under <span class="name">Portfolio</span> submenu.
+							<br />Basically to put portfolio on your page, just use below shortcode:
+						</p>
+						<pre class="code">[nostalgia_portfolio]</pre>
+						<p>
+							There are five types of portfolio item available: <span class="name">image</span>, <span class="name">video</span>, <span class="name">audio</span>, <span class="name">iframe</span>, <span class="name">external url</span>.
+							To use video item, you need to set its url in <span class="name">Video URL (optional)</span> textfield, analogously for audio, iframe and external url.
+							<br /><br />
+							You can also display portfolio items from certain caregories. Examples:
+						</p>
+						<pre class="code">[nostalgia_portfolio category='image']</pre>
+						<pre class="code">[nostalgia_portfolio category='video']</pre>
+						<pre class="code">[nostalgia_portfolio category='image,video']</pre>
+						<p>Available shortcode parameters:</pre>
+						<table cellspacing="1px;" cellpadding="0px;" style="background-color: #E1E5E9;margin-top: 15px;">
+							<tr>
+								<th>Parameter</th>
+								<th style="width: 100px;">Default value</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>category</td>
+								<td></td>
+								<td>Specifies the category/categories from which portfolio items will be displayed. Example:<pre>[nostalgia_portfolio category='image,video']</pre></td>
+							</tr>
+							<tr>
+								<td>open</td>
+								<td>false</td>
+								<td>
+									Specifies the category tab which should be opened on start. Example:
+									<pre>[nostalgia_portfolio category='youtube,vimeo' open='youtube']</pre>
+								</td>
+							</tr>
+							<tr>
+								<td>default_tab_title</td>
+								<td>Portfolio Items</td>
+								<td>
+									Specifies the category tab which should be opened on start. Example:
+									<pre>[nostalgia_portfolio default_tab_title='My custom default tab title']</pre>
+								</td>
+							</tr>
+						</table>	
+						<br />
+						<h4>Service</h4>
+						<p>
+							Nostalgia have custom post type for services page. You can manage services items in your admin area under <span class="name">Services</span> submenu.
+							For each service item you can define an icon under <span class="name">Options</span> box on add/edit service item page.
+							<br />Basically to put services on your page, just use below shortcode:
+						</p>
+						<pre class="code">[nostalgia_service]</pre>
+						<p>
+							You can also display service items from certain caregories. Examples:
+						</p>
+						<pre class="code">[nostalgia_service category='applications']</pre>
+						<pre class="code">[nostalgia_service category='applications,works']</pre>
+						<br />
+						<h4>About</h4>
+						<p>
+							Nostalgia have custom post type for about page. You can manage about items in your admin area under <span class="name">About</span> submenu.
+							For each about item you can define an icon under <span class="name">Options</span> box on add/edit about item page.
+							<br />Basically to put about on your page, just use below shortcode:
+						</p>
+						<pre class="code">[nostalgia_about]</pre>
+						<p>
+							You can also display about items from certain caregories. Example:
+						</p>
+						<pre class="code">[nostalgia_about category='websites']</pre>
+						<br />
+                        <h4>Contact form</h4>
+						<p>
+							This project includes a contact form ready for use.<br/> 
+							All you need is to configure some constants located under <span class="name">Settings</span> submenu (<span class="name">Nostalgia Contact Form Options</span> position).
+							Then you can use in page content below shortcode:
+						</p>
+						<pre class="code">[nostalgia_contact_form]</pre>
+						<br />
+                        <h4>Google Map & Contact info/details</h4>
+						<p>
+							Nostalgia includes also Google Map shortcode.<br/> 
+							It can be added to the page with <span class="name">[nostalgia_map]</span> shortcode.
+							Example:
+						</p>
+						<pre class="code">[nostalgia_map width='245' height='200' lat='48.864037' lng='2.353477' zoom='15' marker_lat='48.864037' marker_lng='2.353477']</pre>
+						<p>Available shortcode parameters:</pre>
+						<table cellspacing="1px;" cellpadding="0px;" style="background-color: #E1E5E9;margin-top: 15px;">
+							<tr>
+								<th>Parameter</th>
+								<th style="width: 100px;">Default value</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>map</td>
+								<td>Specifies the identifier of the map. Should be unique for each map, if they are displayed in the same page.</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>245</td>
+								<td>Specifies the width of the map in pixels.</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>200</td>
+								<td>Specifies the height of the map in pixels.</td>
+							</tr>
+							<tr>
+								<td>lat</td>
+								<td>29.760193</td>
+								<td>Specifies the latitude coordinate of the map center point.</td>
+							</tr>
+							<tr>
+								<td>lng</td>
+								<td>-95.36939</td>
+								<td>Specifies the longitude coordinate of the map center point.</td>
+							</tr>
+							<tr>
+								<td>marker_lat</td>
+								<td>29.760193</td>
+								<td>Specifies the latitude coordinate of the map marker.</td>
+							</tr>
+							<tr>
+								<td>marker_lng</td>
+								<td>-95.36939</td>
+								<td>Specifies the longitude coordinate of the map marker.</td>
+							</tr>
+							<tr>
+								<td>zoom</td>
+								<td>10</td>
+								<td>Specifies the zoom value for the map.</td>
+							</tr>
+							<tr>
+								<td>arrow</td>
+								<td>1</td>
+								<td>Specifies if the map should have the arrow on the left side. That parameter is usefull if you're using map with [contact_info] and [contact_details] shortcodes.</td>
+							</tr>
+							<tr>
+								<td>streetviewcontrol</td>
+								<td>false</td>
+								<td>Specifies if the map should have street view control icons.</td>
+							</tr>
+							<tr>
+								<td>maptypecontrol</td>
+								<td>false</td>
+								<td>Specifies if the map should have map type control icons.</td>
+							</tr>
+						</table>
+						<p>
+							There are also contact details shortcodes.<br/> 
+							It can be added to the page with <span class="name">[contact_info]</span> shortcode and <span class="name">[contact_details]</span> shortcode.
+							Example:
+						</p>
+						<pre class="code">[contact_info]
+	[contact_details phone='T: 877 123 0223' fax='F: 877 123 0224' email='E: keith@douglas.com']
+	Keith Douglas
+	Quai Henri IV
+	75004 Paris, France
+	[/contact_details][nostalgia_map lat='48.864037' lng='2.353477' zoom='15' marker_lat='48.864037' marker_lng='2.353477']
+[/contact_info]</pre>
+						As you can see in <span class="name">[contact_details]</span> shortcode you can use 3 parameters: phone, fax and email.<br />
+						To reach nice looking contact details part of the page please put <span class="name">[contact_details]</span> and <span class="name">[nostalgia_map]</span> shortcodes into <span class="name">[contact_info]</span> shortcode.
+					</div>
+                    
+                    <div id="tab-7">
+                        <h1>Languages</h1>
+						<p>
+							Theme supports translations. To create your language translation, please download this usefull tool <a href='http://www.poedit.net/' title='Poedit'>Poedit</a>. Then find in <span class="name">languages</span> directory <span class='name'>default.po</span> file and open it in <span class='name'>Poedit</span>.
+							Translate appropriate texts and save the file giving it appropriate name (check <a href='http://codex.wordpress.org/WordPress_in_Your_Language'>here</a> for more). For example French: <span class="name">fr_FR</span>, German: <span class="name">de_DE</span>, etc.<br />
+							The last step is setting the language in <span class="name">wp-config.php</span> file. Please open it and find (or add if it doesn't exists) below line:
+							<pre class="code">define ('WPLANG', '');</pre>
+							Then set your language, for example French:
+							<pre class="code">define ('WPLANG', 'fr_FR');</pre>
+							That's all.
+						</p>
+                    </div>
+                    
+                    <!-- #### -->
+                    
+                    <div id="tab-8">
+						<h1>Credits</h1>
+						<h4>Fonts used</h4>
+						<ul class="documentation">
+							<li><span class="name">Dosis</span> By Pablo Impallari, SIL Open Font License, 1.1<br/><a href="http://www.google.com/webfonts/specimen/Dosis">http://www.google.com/webfonts/specimen/Dosis</a>,</li>
+							<li><span class="name">DearJoe 5 Casual</span> By JOEBOB graphics<br/><a href="http://www.dafont.com/dear-joe-5-casual.font">http://www.dafont.com/dear-joe-5-casual.font</a>,</li>
+							<li><span class="name">Aldrich</span> By Matt Desmond, SIL Open Font License, 1.1<br/><a href="http://www.google.com/webfonts/specimen/Aldrich">http://www.google.com/webfonts/specimen/Aldrich</a>,</li>
+							<li><span class="name">Arial</span> - default system font.</li>
+						</ul>
+						<br/>
+						<h4>Icons</h4>
+						<p>All icons by QuanticaLabs. Icons are an integral part of this template, please do not use it separately for other purposes.</p>
+						<br/>
+						<h4>Images</h4>
+						<p>
+							All images under Creative Commons Attribution 2.0 Generic for commercial use.<br/>
+							No Derivative Works or Share-Alike conditions waived by permission of copyright holders.
+						</p>
+						<ul class="documentation">
+							<li><span class="name">Lavender</span> By Vincent van der Pas<br/><a href="http://www.flickr.com/photos/archetypefotografie/4958711873/in/photostream/">http://www.flickr.com/photos/archetypefotografie/4958711873/in/photostream/</a>,</li>
+							<li><span class="name">Halle Kearney EXPLORE</span> By Robby Mueller<br/><a href="http://www.flickr.com/photos/ro2b3yface/5623260278/in/photostream/">http://www.flickr.com/photos/ro2b3yface/5623260278/in/photostream/</a>,</li>
+							<li><span class="name">plainsong</span> By Robb North<br/><a href="http://www.flickr.com/photos/robbn1/3405147407/in/photostream/">http://www.flickr.com/photos/robbn1/3405147407/in/photostream/</a>,</li>
+							<li><span class="name">Falcon on Rue Drolet</span> By Flat-Black 66<br/><a href="http://www.flickr.com/photos/flatblack66/4733463620/">http://www.flickr.com/photos/flatblack66/4733463620/</a>,</li>
+							<li><span class="name">Bekohlicious!</span> By 55Laney69<br/><a href="http://www.flickr.com/photos/hansel5569/6001781706/in/photostream/">http://www.flickr.com/photos/hansel5569/6001781706/in/photostream/</a>,</li>
+							<li><span class="name">New kitchen radio</span> By Johan Larsson<br/><a href="http://www.flickr.com/photos/johanl/6125230384/in/photostream/">http://www.flickr.com/photos/johanl/6125230384/in/photostream/</a>.</li>
+						</ul>
+						<br/>
+						<h4>Music</h4>
+						<ul class="documentation">
+							<li><span class="name">Love Your Life (Outro track) </span> By Kondor<br/><a href="http://djkondor.bandcamp.com/track/love-your-life-outro-track">http://djkondor.bandcamp.com/track/love-your-life-outro-track</a></li>
+							<li><span class="name">Pure Thoughts </span> By Kondor<br/><a href="http://djkondor.bandcamp.com/track/pure-thoughts">http://djkondor.bandcamp.com/track/pure-thoughts</a></li>
+							<li><span class="name">Day Dreamin' </span> By Kondor<br/><a href="http://djkondor.bandcamp.com/track/day-dreamin">http://djkondor.bandcamp.com/track/day-dreamin</a></li>
+						</ul>
+                    </div>
+                    
+                    <!-- #### -->
+					
+					<div id="tab-9">
+                        <h1>Version history</h1>
+						<p><b>25 June 2012</b>, ver. 4.0</p>
+						<ul class="documentation">
+							<li>Widget area on the home page added</li>
+							<li>Latest post & latest portfolio widgets added</li>
+						</ul>
+						<p><b>21 June 2012</b>, ver. 3.7</p>
+						<ul class="documentation">
+							<li>Fix for bug - music player can't be disabled on mobile devices</li>
+						</ul>
+						<p><b>21 June 2012</b>, ver. 3.6</p>
+						<ul class="documentation">
+							<li>New options added: slideshow transition, slideshow transition speed, slideshow slide interval</li>
+						</ul>
+						<p><b>19 June 2012</b>, ver. 3.5</p>
+						<ul class="documentation">
+							<li>Option to set number of items displayed in menu</li>
+							<li>Scroll issue in blog & portfolio (overlapping images) on mobile devices fix</li>
+							<li>Portfolio issue in IE7 & IE8 fix</li>
+							<li>Portfolio bug when displayed in blog post fix</li>
+						</ul>
+						<p><b>14 June 2012</b>, ver. 3.1</p>
+						<ul class="documentation">
+							<li>Autoplay option bug fix in music player</li>
+						</ul>
+						<p><b>13 June 2012</b>, ver. 3.0</p>
+						<ul class="documentation">
+							<li>Music player added</li>
+							<li>Blog sorting order option added</li>
+							<li>Option to disable background overlay added</li>
+							<li>Audio item type in portfolio added</li>
+							<li>Portfolio item description settings added (can be displayed also in lightbox now)</li>
+						</ul>
+						<p><b>09 June 2012</b>, ver. 2.0</p>
+						<ul class="documentation">
+							<li>Custom theme/single page color feature added</li>
+						</ul>
+						<p><b>08 June 2012</b>, ver. 1.1</p>
+						<ul class="documentation">
+							<li>Contact form fix</li>
+						</ul>
+						<p><b>01 June 2012</b>, ver. 1.0</p>
+						<ul class="documentation">
+							<li>First release</li>
+						</ul>
+
+					</div>
+                    
+                    <!-- #### -->
+                    
+                    <div id="tab-10">
+                        <h1>Support</h1>
+                        If you have any questions, please use our profile contact form on Envato (<a href="http://themeforest.net/user/QuanticaLabs#from?ref=QuanticaLabs">http://themeforest.net/user/QuanticaLabs</a>).<br/> 
+                        We aim to answer all questions within <strong>24 hours</strong>. In some cases the waiting time can be extended to <strong>48 hours</strong>.
+                    </div>
+                
+                </div>                
+                
+            </div>
+            
+            <div class="footer">
+                <a href="http://themeforest.net/user/QuanticaLabs?ref=quanticalabs">&copy; 2012 QuanticaLabs</a>
+            </div>
+            
+        </div>
+        
+        <div>
+        
+            <input type="hidden" id="open-tabs" value="1" />
+        
+        </div>
+        
+    </body>
+    
+</html>
