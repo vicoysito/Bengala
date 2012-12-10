@@ -75,6 +75,9 @@ if(function_exists("register_sidebar"))
 add_theme_support("post-thumbnails");
 add_image_size("blog-post-thumb", 490, 200, true);
 add_image_size($themename . "-portfolio-thumb", 230, 150, true);
+
+
+
 function theme_image_sizes($sizes)
 {
 	global $themename;

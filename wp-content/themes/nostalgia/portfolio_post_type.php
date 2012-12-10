@@ -212,8 +212,11 @@ function portfolio_tab($categories="", $i="", $open="", $default_tab_title="")
         'order' => 'ASC'
     ));
     $output = "";
+    //EDITADO POR VICTOR ESPINOSA
+    $estiloH3Videos='style="background:#000000 url(\' http://knock-factory.com.mx/Bengala/wp-content/themes/nostalgia/images/icon_plus.png\') right center no-repeat;"';
+    //FIN EDITADO POR VICTOR ESPINOSA
     if(have_posts()):
-        $output .= '<h3' . ($open==$categories[$i] ? ' class="ui-state-active"' : '') . '><a href="#">';
+        $output .= '<h3' . ($open==$categories[$i] ? ' class="ui-state-active"' : '').'><a href="#" '. $estiloH3Videos.'>';
         if($categories!="")
         {
             $term = get_term_by('slug', $categories[$i], $themename . "_portfolio_category");
@@ -221,11 +224,21 @@ function portfolio_tab($categories="", $i="", $open="", $default_tab_title="")
             for($j=count($ancestors)-1; $j>=0; $j--)
                 $output .= get_term($ancestors[$j], $themename . "_portfolio_category")->name . " / ";
             $output .= $term->name;
+            //EDITADO POR VICTOR ESPINOSA
+            $subTitle="";
+              if($term->name=="ONSCREEN"){
+                  $subTitle='<p style="font-family:\'Novecentowide-Light\'; font-size:14px;">WEB <b>/</b> ANIMACI&Oacute;N <b>/</b> PRODUCCI&Oacute;N DE VIDEO <b>/</b></br> MOBILE APPS <b>/</b> REDES SOCIALES</p>';
+              }
+              else if($term->name =="ONLOCATION"){
+                  $subTitle='<p style="font-family:\'Novecentowide-Light\'; font-size:14px;">VIDEOMAPPING <b>/</b> HOLLOGRAPHIC PROJECTION <b>/</b></br> INSTALACIONES <b>/</b> 3D DISPLAY</p>';
+              }
+           //FIN EDITADO POR VICTOR ESPINOSA
+   
         }
         else
             $output .= $default_tab_title;
         $output .= '</a></h3>
-        <div><ul class="image-list">';
+        <div>'.$subTitle.'<ul class="image-list">';
         $j=0;
         while(have_posts()): the_post();
             if(has_post_thumbnail()) 
@@ -259,9 +272,21 @@ function portfolio_tab($categories="", $i="", $open="", $default_tab_title="")
                 
                 
                 
-                                           // FIN DELA EDICION
-                                          
+                                           
+                                if($term->name=="ONSCREEN" || $term->name =="ONLOCATION"){
                                 $output .= '
+                <li class="' . ($j%2==0 ? 'left' : 'right') . '">
+                    <a href="' . ($external_url=="" && $audio_url=="" ? ($iframe_url!="" ? $iframe_url : $large_image_url) : ($audio_url=="" ? $external_url : $audio_url)) . '"' . ($external_url=="" && $audio_url=="" ? ' class="fancybox-' . ($video_url!="" ? 'video' : ($iframe_url!="" ? 'iframe' : 'image')) . '"' : ($audio_url!="" ? ' class="audio-item"' : '')) . ($portfolio_description_location=='lightbox' || $portfolio_description_location=='both' ? ' title="' . esc_attr(get_the_content()) . '"' : '' ) . '>'
+                        . get_the_post_thumbnail($post->ID, $themename . "-portfolio-thumb", array("alt" => get_the_title(), "title" => $thumbnail_image[0]->post_excerpt, "facebook" => $thumbnail_image[0]->post_title )) .
+                        '<span/>
+                    </a>
+                    <!-- <div class="image-list-caption">
+                        <div class="image-list-caption-title">' . get_the_title() . '</div>
+                        ' . ($portfolio_description_location=='item' || $portfolio_description_location=='both' ? '<div class="image-list-caption-subtitle">' . get_the_content() . '</div>' : '') . '
+                    </div>-->
+                </li>';}
+                else{
+                                   $output .= '
                 <li class="' . ($j%2==0 ? 'left' : 'right') . '">
                     <a href="' . ($external_url=="" && $audio_url=="" ? ($iframe_url!="" ? $iframe_url : $large_image_url) : ($audio_url=="" ? $external_url : $audio_url)) . '"' . ($external_url=="" && $audio_url=="" ? ' class="fancybox-' . ($video_url!="" ? 'video' : ($iframe_url!="" ? 'iframe' : 'image')) . '"' : ($audio_url!="" ? ' class="audio-item"' : '')) . ($portfolio_description_location=='lightbox' || $portfolio_description_location=='both' ? ' title="' . esc_attr(get_the_content()) . '"' : '' ) . '>'
                         . get_the_post_thumbnail($post->ID, $themename . "-portfolio-thumb", array("alt" => get_the_title(), "title" => $thumbnail_image[0]->post_excerpt, "facebook" => $thumbnail_image[0]->post_title )) .
@@ -272,13 +297,15 @@ function portfolio_tab($categories="", $i="", $open="", $default_tab_title="")
                         ' . ($portfolio_description_location=='item' || $portfolio_description_location=='both' ? '<div class="image-list-caption-subtitle">' . get_the_content() . '</div>' : '') . '
                     </div>
                 </li>';
+                }
+                // FIN DELA EDICION VICTOR ESPINOSA
+                
                 $j++;
             }
         endwhile; 
                 
                 
         $output .= '</ul></div>';
-//        <!--PUERCOS uno'. $thumbnail_image[0]." dos ". $thumbnail_image[0].' -->'
     endif;
     return $output;
 }

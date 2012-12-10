@@ -65,6 +65,7 @@
                 href, 
                 type, 
                 title,
+                desc,
                 str,
                 emb,
                 ret;
@@ -88,9 +89,9 @@
             }
 
             if (title === '' && selectedOpts.orig && selectedOpts.titleFromAlt) {
-                alert("entro");
-                                title = selectedOpts.orig.attr('alt');
-                                alert(title);
+                                title = selectedOpts.orig.attr('title');
+                                
+                                
             }
 
             href = selectedOpts.href || (obj.nodeName ? $(obj).attr('href') : obj.href) || null;
@@ -310,9 +311,10 @@
             $("<img />").attr({
                 'id' : 'fancybox-img',
                 'src' : imgPreloader.src,
-                'alt' : selectedOpts.title,
-                                'facebook':selectedOpts.title
+                'title' : selectedOpts.title,
+                'desc':selectedOpts.orig.attr('desc')
             }).appendTo( tmp );
+            
                         // EDITADO POR VICTOR ESPINOSA
 //                        alert($("#fancybox-img").attr('alt'));
 //                        alert($("#fancybox-img").attr('title'));
@@ -326,11 +328,9 @@
 
             if (wrap.is(":visible") && false === currentOpts.onCleanup(currentArray, currentIndex, currentOpts)) {
                 $.event.trigger('fancybox-cancel');
-
                 busy = false;
                 return;
             }
-
             busy = true;
 
             $(content.add( overlay )).unbind();
@@ -616,8 +616,12 @@
             }
 
             if (currentOpts.type == 'iframe') {
+                $("#_rsBengalaWrappDentro").hide(0);
                 $('<iframe id="fancybox-frame" name="fancybox-frame' + new Date().getTime() + '" frameborder="0" hspace="0" ' + ($.browser.msie ? 'allowtransparency="true""' : '') + ' scrolling="' + selectedOpts.scrolling + '" src="' + currentOpts.href + '"></iframe>').appendTo(content);
-            }
+                }
+            else if (currentOpts.type != 'iframe') {
+                $("#_rsBengalaWrappDentro").show(500);
+                       }
 
             wrap.show();
 
@@ -972,6 +976,8 @@
             currentOpts = selectedOpts    = {};
 
             busy = false;
+            //EDITADO POR VICTOR ESPINOSA
+            $("#_rsBengalaWrappDentro").css("display","none");
         }
 
         if (currentOpts.transitionOut == 'elastic') {
@@ -1037,9 +1043,9 @@
     };
 
 // EDITADO POR VICTOR ESPINOSA
-   var _redesSociales ='<div id="_rsBengalaWrapp" style="z-index:4000;top:16px; right:0px;width:103px">';
-    _redesSociales +='<a href="http://www.facebook.com/casabengala.tv" target="_blank"><div class="rsBengala _Rsfb"></div></a>';
-    _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rstw"></div></a>';
+   var _redesSociales ='<div id="_rsBengalaWrappDentro">';
+    _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'fb\')"><div class="rsBengala _Rsfb"></div></a>';
+    _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'tw\')"><div class="rsBengala _Rstw"></div></a>';
 //    _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rsin"></div></a>';
 //    _redesSociales +='<a href="http://vimeo.com/casabengala" target="_blank"><div class="rsBengala _Rsvi"></div></a>';
     _redesSociales +='</div>';
@@ -1067,6 +1073,8 @@
             nav_left = $('<a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a>'),
             nav_right = $('<a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>')
         ) ;
+            
+        //EDITADO POR VICTOR ESPINOSA
         close.click($.fancybox.close);
         loading.click($.fancybox.cancel);
 
