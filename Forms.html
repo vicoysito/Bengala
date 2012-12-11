@@ -1,0 +1,87 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script>
+        var NuevaImagen = function(imgPoner){
+       
+//        this.img = $('<img>').attr({'id':'myDs',"src":"dos"}).html('prueba').appendTo('#thumbs');
+        this.img = $('<img>');
+        this.id = "prueba";
+        this.src = "images/bg/prin/"+imgPoner;
+        this.width = "100px;";
+        this.height = "100px";
+        
+        
+        this.creaImagen = function(){
+        this.img.attr({"id":this.id,"src":this.src,"width":this.width, "height":this.height});
+        }
+        
+        this.ponIMG = function(){
+            this.img.on("click",function(){
+               this.src=cambiarIMG(this.src);
+            });
+            this.img.html("prueba").appendTo('#thumbs');
+        }
+        
+        }
+        
+        
+        function cambiarIMG(imgIntro){
+            var imgActual = $("#contenedor");
+            var imgTemp = imgActual.attr("src");
+            imgActual.attr("src",imgIntro);
+            imgIntro = imgTemp;
+            return imgTemp
+        }
+
+    
+    
+    
+    var imagenes = ["2.png","3.png","2.png","1.png","2.png","1.png","2.png","1.png"];
+    
+    
+    function creaReel(){
+        
+        for (i=0;i<imagenes.length;i++){
+            img = new NuevaImagen(imagenes[i]);
+            img.creaImagen();
+            img.ponIMG();
+        }
+        
+    }
+    
+    
+        
+        $(function(){
+//            var uno = new NuevaImagen("2.png");
+//            uno.creaImagen();
+//            uno.ponIMG();
+//            
+//            var dos = new NuevaImagen("3.png");
+//            dos.creaImagen();
+//            dos.ponIMG();
+        creaReel();            
+
+        })
+        
+        </script>
+    
+    
+    </head>
+    <body>
+        <script>
+            
+        </script>
+        
+        <img id="contenedor" width="300" height="200" src ="images/bg/prin/1.png"/>
+        <div id="thumbs" style="width:300px; height:200px; background: red;"></div>
+    </body>
+</html>
