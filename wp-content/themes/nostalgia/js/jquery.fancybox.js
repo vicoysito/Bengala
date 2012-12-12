@@ -134,7 +134,7 @@
             }
 
             if (type == 'inline') {
-                obj    = href.substr(href.indexOf("#"));
+                obj = href.substr(href.indexOf("#"));
                 type = $(obj).length > 0 ? 'inline' : 'ajax';
             }
 
@@ -242,7 +242,7 @@
                     selectedOpts.ajax.win = selectedOpts.ajax.success;
 
                     ajaxLoader = $.ajax($.extend({}, selectedOpts.ajax, {
-                        url    : href,
+                        url : href,
                         data : selectedOpts.ajax.data || {},
                         error : function(XMLHttpRequest, textStatus, errorThrown) {
                             if ( XMLHttpRequest.status > 0 ) {
@@ -314,9 +314,10 @@
                 'title' : selectedOpts.title,
                 'desc':selectedOpts.orig.attr('desc')
             }).appendTo( tmp );
+            
                         // EDITADO POR VICTOR ESPINOSA
-//                        alert($("#fancybox-img").attr('alt'));
-//                        alert($("#fancybox-img").attr('title'));
+// alert($("#fancybox-img").attr('alt'));
+// alert($("#fancybox-img").attr('title'));
             _show();
         },
 
@@ -617,8 +618,12 @@
             }
 
             if (currentOpts.type == 'iframe') {
+                $("#_rsBengalaWrappDentro").hide(0);
                 $('<iframe id="fancybox-frame" name="fancybox-frame' + new Date().getTime() + '" frameborder="0" hspace="0" ' + ($.browser.msie ? 'allowtransparency="true""' : '') + ' scrolling="' + selectedOpts.scrolling + '" src="' + currentOpts.href + '"></iframe>').appendTo(content);
             }
+            else if (currentOpts.type != 'iframe') {
+                $("#_rsBengalaWrappDentro").show(500);
+                       }
 
             wrap.show();
 
@@ -973,6 +978,8 @@
             currentOpts = selectedOpts    = {};
 
             busy = false;
+            //EDITADO POR VICTOR ESPINOSA
+            $("#_rsBengalaWrappDentro").css("display","none");
         }
 
         if (currentOpts.transitionOut == 'elastic') {
@@ -1038,12 +1045,15 @@
     };
 
 // EDITADO POR VICTOR ESPINOSA
-   var _redesSociales ='<div id="_rsBengalaWrapp" style="z-index:4000;top:16px; right:0px;width:103px">';
+   var _redesSociales ='<div id="_rsBengalaWrappDentro" style="z-index:4000;top:16px; right:0px;width:103px">';
     _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'fb\')"><div class="rsBengala _Rsfb"></div></a>';
     _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'tw\')"><div class="rsBengala _Rstw"></div></a>';
 //    _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rsin"></div></a>';
 //    _redesSociales +='<a href="http://vimeo.com/casabengala" target="_blank"><div class="rsBengala _Rsvi"></div></a>';
     _redesSociales +='</div>';
+    
+    var carrWrapp = '<div id=_carrWrapp></div>';
+    
     $.fancybox.init = function() {
         if ($("#fancybox-wrap").length) {
             return;
@@ -1061,13 +1071,18 @@
             .appendTo( wrap );
 
         outer.append(
-                        content = $('<div id="fancybox-content"></div>'),
+            content = $('<div id="fancybox-content"></div>'),
             close = $('<a id="fancybox-close"></a>'),
             title = $('<div id="fancybox-title"></div>'),
+            // CARROUSELL EDITADO POR VICTOR ESPINOSA
             _redesSocialesObjetos = $(_redesSociales),
+            _carrusellObjeto=$(carrWrapp),
+            //FIN EDITADO POR VICTOR ESPINOSA
             nav_left = $('<a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a>'),
             nav_right = $('<a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>')
         ) ;
+            
+        //EDITADO POR VICTOR ESPINOSA
         close.click($.fancybox.close);
         loading.click($.fancybox.cancel);
 

@@ -10,15 +10,16 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="js/jquery-1.7.2.min.js"></script>
         <script>
-        var NuevaImagen = function(imgPoner){
-       
-//        this.img = $('<img>').attr({'id':'myDs',"src":"dos"}).html('prueba').appendTo('#thumbs');
+    
+    var imagenes = ["2.png","3.png","2.png","1.png","2.png","1.png","2.png","1.png"];
+
+    var NuevaImagen = function(imgPoner){
+         this.img = $('<img>').attr({'id':'myDs',"src":"dos"}).html('prueba').appendTo('#thumbs');
         this.img = $('<img>');
         this.id = "prueba";
         this.src = "images/bg/prin/"+imgPoner;
         this.width = "100px;";
         this.height = "100px";
-        
         
         this.creaImagen = function(){
         this.img.attr({"id":this.id,"src":this.src,"width":this.width, "height":this.height});
@@ -42,11 +43,6 @@ and open the template in the editor.
             return imgTemp
         }
 
-    
-    
-    
-    var imagenes = ["2.png","3.png","2.png","1.png","2.png","1.png","2.png","1.png"];
-    
     
     function creaReel(){
         

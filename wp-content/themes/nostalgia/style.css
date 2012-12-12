@@ -2347,8 +2347,42 @@ div.contact-details-map div.contact-details-map-arrow
 
 
 /**************************************************************************/
-/*  REDES SOCIALES /// VICTOR ESPINOSA	                                                      */
+/* REDES SOCIALES /// VICTOR ESPINOSA */
 /**************************************************************************/
+
+#_rsBengalaWrapp{
+    width: 160px;
+    height:38px;
+    position:absolute;
+    bottom:10%;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+#_rsBengalaWrappDentro{
+/* width: 160px;*/
+    height:38px;
+    position:absolute;
+    bottom:10%;
+    cursor:pointer;
+    overflow: hidden;
+    z-index:4000;
+    top:16px;
+    right:0px;
+    width:103px;
+    display:none;
+}
+#_rsBengalaWrappDentro .rsBengala {
+    width:38px;
+    height:38px;
+    border-left:1px solid #dee444;
+    float: left;
+    
+}
+
+#_rsBengalaWrappDentro .rsBengala:last-child {
+    border-right:1px solid #dee444;
+}
 
 #_rsBengalaWrapp{
     width: 160px;
@@ -2398,4 +2432,13 @@ div.contact-details-map div.contact-details-map-arrow
 
 .NovecentoBold{
         font-family: "Novecentowide-Bold"; 
+}
+
+#_carrWrapp{
+    width:100%; 
+    height:100px; 
+    background:red; 
+    position:absolute; 
+    bottom:30px;
+    z-index:1102;
 }

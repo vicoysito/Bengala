@@ -261,8 +261,121 @@ function _rsCompartir(tipoRed){
     
     default:
         alert("no se selecciono una red válida")
+    }
         
     }
     
     
+function galleryImg(){
+    alert("gallery IMG");
 }
+
+var _txtServicios = '<h3>SERVICIOS</h3>'
+               _txtServicios += '<div role="tablist" class="nostalgia-accordion ui-accordion ui-widget ui-helper-reset">'
+               _txtServicios += '<h3 tabindex="0" aria-selected="true" aria-expanded="true" role="tab" class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top">'
+               _txtServicios += '<a style="background:#000000 url(\' http://knock-factory.com.mx/Bengala/wp-content/themes/nostalgia/images/icon_plus.png\') right center no-repeat;" tabindex="-1" href="#">ON<b>SCREEN</b></a>'
+                _txtServicios +='</h3>'
+                _txtServicios +='<div style="display: block;" role="tabpanel" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">'
+               _txtServicios += '<p style="font-family:\'Novecentowide-Light\'; font-size:12px;">WEB <b>/</b> ANIMACIÓN <b>/</b> PRODUCCIÓN DE VIDEO <b>/</b> MOBILE APPS <b>/</b> REDES SOCIALES</p>'
+               _txtServicios += '<ul class="image-list">'
+               _txtServicios += '<li class="left">'
+                _txtServicios +='<a style="border: 1px solid red; height: 180px; width: 480px;" href="http://player.vimeo.com/video/45931147?badge=0" class="fancybox-iframe" title="ON SCREEN PRUEBA">'
+               _txtServicios += '<img style="height: 180px; width: 480px;" src="http://knock-factory.com.mx/Bengala/wp-content/uploads/2012/11/Logo-1-230x126.png" class="attachment-nostalgia-portfolio-thumb wp-post-image" alt="ONSCREEN" title="Logo (1)" desc="" height="126" width="230">'
+               _txtServicios += '</a>'
+               _txtServicios += '</li>'
+               _txtServicios += '</ul>'
+               _txtServicios += '</div>'
+               _txtServicios += '<h3 tabindex="-1" aria-selected="false" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all">'
+               _txtServicios += '<a tabindex="-1" href="#">ON<b>LOCATION</b></a>'
+               _txtServicios += '</h3>'
+               _txtServicios += '<div style="display: none;" role="tabpanel" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">'
+               _txtServicios += '<p style="font-family:\'Novecentowide-Light\'; font-size:12px;">'
+               _txtServicios += 'VIDEOMAPPING <b>/</b> HOLLOGRAPHIC PROJECTION <b>/</b> INSTALACIONES <b>/</b> 3D DISPLAY'
+               _txtServicios += '</p>'
+               _txtServicios += '<ul class="image-list">'
+               _txtServicios += '<li class="left">'
+               _txtServicios += '<a style="border: 1px solid red; height: 180px; width: 480px;" href="http://player.vimeo.com/video/45931147?badge=0" class="fancybox-iframe" title="Prueba de onlocation">'
+               _txtServicios += '<img style="height: 180px; width: 480px;" src="http://knock-factory.com.mx/Bengala/wp-content/uploads/2012/11/Logo-1-230x126.png" class="attachment-nostalgia-portfolio-thumb wp-post-image" alt="ONLOCATION" title="Logo (1)" desc="" height="126" width="230">'
+               _txtServicios += '</a>'
+               _txtServicios +='<div style="width: 430px;" class="image-list-caption">'
+               _txtServicios +='<div style="width: 430px;" class="image-list-caption">'
+                _txtServicios +='<div class="image-list-caption-title">ONLOCATION</div>'
+                _txtServicios +='<div class="image-list-caption-subtitle">Prueba de onlocation</div>'
+                _txtServicios +='</div>'
+                _txtServicios +='</li>'
+                _txtServicios +='</ul>'
+                _txtServicios +='</div></div>'
+                
+                
+                
+    var texto2 = '<h3>SERVICIOS</h3>'
+    texto2 +='<div class="nostalgia-accordion ui-accordion ui-widget ui-helper-reset" role="tablist">'
+    texto2 += '<h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0">'
+    texto2 += '<a style="background:#000000 url(\' http://knock-factory.com.mx/Bengala/wp-content/themes/nostalgia/images/icon_plus.png\') right center no-repeat;" tabindex="-1" href="#">ON<b>SCREEN</b></a>'
+    texto2 += '</h3>'
+    texto2 += '<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" role="tabpanel" style="display: none;">'
+    texto2 += '<p style="font-family:\'Novecentowide-Light\'; font-size:12px;">WEB <b>/</b> ANIMACIÓN <b>/</b> PRODUCCIÓN DE VIDEO <b>/</b> MOBILE APPS <b>/</b> REDES SOCIALES</p>'
+    texto2 += '<ul class="image-list">'
+    texto2 += '<li class="left">'
+    texto2 += '<a class="fancybox-iframe" title="ON SCREEN PRUEBA" href="http://player.vimeo.com/video/45931147?badge=0" style="border: 1px solid red; height: 180px; width: 480px;">'
+    texto2 += '<img class="attachment-nostalgia-portfolio-thumb wp-post-image" width="230" height="126" desc="" title="Logo (1)" alt="ONSCREEN" src="http://knock-factory.com.mx/Bengala/wp-content/uploads/2012/11/Logo-1-230x126.png" style="height: 180px; width: 480px;">'
+    texto2 += '</a>'
+    texto2 += '<div class="image-list-caption" style="width: 430px; display: none;">'
+     texto2 += '<div class="image-list-caption-title"></div>'
+     texto2 += '<div class="image-list-caption-subtitle"></div>'
+     texto2 += ' </div>'
+    texto2 += '</li>'
+    texto2 += ' </ul>'
+    texto2 += '</div>'
+    texto2 += '<h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="-1">'
+    texto2 += '<a href="#" tabindex="-1">ONLOCATION</a>'
+    texto2 += '</h3>'
+     texto2 += '<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" role="tabpanel" style="display: none;">'
+     texto2 += '<p style="font-family:\'Novecentowide-Light\'; font-size:12px;">'
+     texto2 += 'VIDEOMAPPING <b>/</b> HOLLOGRAPHIC PROJECTION <b>/</b> INSTALACIONES <b>/</b> 3D DISPLAY'
+     texto2 += '</p>'
+      texto2 += '<ul class="image-list">'
+      texto2 += '<li class="left">'
+      texto2 += '<a class="fancybox-iframe" title="Prueba de onlocation" href="http://player.vimeo.com/video/45931147?badge=0" style="border: 1px solid red; height: 180px; width: 480px;">'
+       texto2 += '<img class="attachment-nostalgia-portfolio-thumb wp-post-image" width="230" height="126" desc="" title="Logo (1)" alt="ONLOCATION" src="http://knock-factory.com.mx/Bengala/wp-content/uploads/2012/11/Logo-1-230x126.png" style="height: 180px; width: 480px;">'
+       texto2 += '</a>'
+       texto2 += '<div class="image-list-caption" style="width: 430px; display: none;">'
+       texto2 += '<div class="image-list-caption-title"></div>'
+       texto2 += '<div class="image-list-caption-subtitle"></div>'
+       texto2 += '</div>'
+       texto2 += '</li>'
+      texto2 += '</ul>'
+      texto2 += '</div>'
+    texto2 +='</div>'
+                
+                
+function galleryVideo(){
+    $=jQuery;
+    $(".fancybox-iframe").css({
+    "border": "0px solid red",
+    "height":"280px",
+    "width":"480px",
+    "margin-top":"-25px",
+    "box-shadow":"3px 3px 5px #4b251b"
+    });
+    $(".fancybox-iframe img").css({
+    "height":"280px",
+    "width":"480px"
+    });
+    
+    $(".image-list-caption").css({
+        "width":"430px"
+    })
+    
+// .parent()
+
+    
+// setTimeout(function(){
+//// var txtDiv = $("#nostalgia-tab-content-page").html(texto2);
+// },1000);
+// $(".nostalgia-accordion div:first-child").html("Texto de prueba <br>"+txtDiv)
+// $(".nostalgia-accordion div:last-child").html("Texto de prueba2 <br>"+txtDiv2)
+  
+    
+}
+
