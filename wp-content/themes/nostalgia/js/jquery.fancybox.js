@@ -1,19 +1,19 @@
 /*
- * FancyBox - jQuery Plugin
- * Simple and fancy lightbox alternative
- *
- * Examples and documentation at: http://fancybox.net
- *
- * Copyright (c) 2008 - 2010 Janis Skarnelis
- * That said, it is hardly a one-person project. Many people have submitted bugs, code, and offered their advice freely. Their support is greatly appreciated.
- *
- * Version: 1.3.4 (11/11/2010)
- * Requires: jQuery v1.3+
- *
- * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
- */
+* FancyBox - jQuery Plugin
+* Simple and fancy lightbox alternative
+*
+* Examples and documentation at: http://fancybox.net
+*
+* Copyright (c) 2008 - 2010 Janis Skarnelis
+* That said, it is hardly a one-person project. Many people have submitted bugs, code, and offered their advice freely. Their support is greatly appreciated.
+*
+* Version: 1.3.4 (11/11/2010)
+* Requires: jQuery v1.3+
+*
+* Dual licensed under the MIT and GPL licenses:
+* http://www.opensource.org/licenses/mit-license.php
+* http://www.gnu.org/licenses/gpl.html
+*/
 
 ;(function($) {
     var tmp, loading, overlay, wrap, outer, content, close, title, nav_left, nav_right,
@@ -29,8 +29,8 @@
         isIE6 = $.browser.msie && $.browser.version < 7 && !window.XMLHttpRequest,
 
         /*
-         * Private methods 
-         */
+* Private methods
+*/
 
         _abort = function() {
             loading.hide();
@@ -62,8 +62,8 @@
 
         _start = function() {
             var obj = selectedArray[ selectedIndex ],
-                href, 
-                type, 
+                href,
+                type,
                 title,
                 desc,
                 str,
@@ -147,7 +147,7 @@
                     selectedOpts.width = 'auto';
                     selectedOpts.height = 'auto';
                 } else {
-                    selectedOpts.autoDimensions = false;    
+                    selectedOpts.autoDimensions = false;
                 }
             }
 
@@ -165,7 +165,7 @@
             tmp.css('padding', (selectedOpts.padding + selectedOpts.margin));
 
             $('.fancybox-inline-tmp').unbind('fancybox-cancel').bind('fancybox-change', function() {
-                $(this).replaceWith(content.children());                
+                $(this).replaceWith(content.children());
             });
 
             switch (type) {
@@ -286,14 +286,14 @@
                 w = parseInt( ($(window).width() - (selectedOpts.margin * 2)) * parseFloat(w) / 100, 10) + 'px';
 
             } else {
-                w = w == 'auto' ? 'auto' : w + 'px';    
+                w = w == 'auto' ? 'auto' : w + 'px';
             }
 
             if (h.toString().indexOf('%') > -1) {
                 h = parseInt( ($(window).height() - (selectedOpts.margin * 2)) * parseFloat(h) / 100, 10) + 'px';
 
             } else {
-                h = h == 'auto' ? 'auto' : h + 'px';    
+                h = h == 'auto' ? 'auto' : h + 'px';
             }
 
             tmp.wrapInner('<div style="width:' + w + ';height:' + h + ';overflow: ' + (selectedOpts.scrolling == 'auto' ? 'auto' : (selectedOpts.scrolling == 'yes' ? 'scroll' : 'hidden')) + ';position:relative;"></div>');
@@ -381,7 +381,7 @@
                 pos = wrap.position(),
 
                 start_pos = {
-                    top     : pos.top,
+                    top : pos.top,
                     left : pos.left,
                     width : wrap.width(),
                     height : wrap.height()
@@ -401,7 +401,7 @@
                         .removeAttr('filter')
                         .css({
                             'border-width' : currentOpts.padding,
-                            'width'    : final_pos.width - currentOpts.padding * 2,
+                            'width' : final_pos.width - currentOpts.padding * 2,
                             'height' : selectedOpts.autoDimensions ? 'auto' : final_pos.height - titleHeight - currentOpts.padding * 2
                         });
 
@@ -450,8 +450,8 @@
                 return;
             }
 
-            if (currentOpts.titlePosition == 'inside' && titleHeight > 0) {    
-                title.show();    
+            if (currentOpts.titlePosition == 'inside' && titleHeight > 0) {
+                title.show();
             }
 
             content
@@ -526,7 +526,7 @@
                     title
                         .css({
                             'marginLeft' : currentOpts.padding,
-                            'width'    : final_pos.width - (currentOpts.padding * 2),
+                            'width' : final_pos.width - (currentOpts.padding * 2),
                             'bottom' : currentOpts.padding
                         })
                         .appendTo( outer );
@@ -566,7 +566,7 @@
                 });
             }
 
-            if (!currentOpts.showNavArrows) { 
+            if (!currentOpts.showNavArrows) {
                 nav_left.hide();
                 nav_right.hide();
                 return;
@@ -603,11 +603,11 @@
 
             _set_navigation();
     
-            if (currentOpts.hideOnContentClick)    {
+            if (currentOpts.hideOnContentClick) {
                 content.bind('click', $.fancybox.close);
             }
 
-            if (currentOpts.hideOnOverlayClick)    {
+            if (currentOpts.hideOnOverlayClick) {
                 overlay.bind('click', $.fancybox.close);
             }
 
@@ -623,6 +623,13 @@
             }
             else if (currentOpts.type != 'iframe') {
                 $("#_rsBengalaWrappDentro").show(500);
+                $("#fancybox-right").css("display","none");
+                $("#fancybox-left").css("display","none");
+                    setTimeout(function(){ 
+                    alert("llego");
+                    mainGaleria("prueba:2.png,3.png,4.png");
+                    }, 1200);
+                
                        }
 
             wrap.show();
@@ -637,7 +644,7 @@
         },
 
         _preload_images = function() {
-            var href, 
+            var href,
                 objNext;
 
             if ((currentArray.length -1) > currentIndex) {
@@ -761,7 +768,7 @@
                 from = {
                     width : pos.width + (currentOpts.padding * 2),
                     height : pos.height + (currentOpts.padding * 2),
-                    top    : pos.top - currentOpts.padding - 20,
+                    top : pos.top - currentOpts.padding - 20,
                     left : pos.left - currentOpts.padding - 20
                 };
 
@@ -771,7 +778,7 @@
                 from = {
                     width : currentOpts.padding * 2,
                     height : currentOpts.padding * 2,
-                    top    : parseInt(view[3] + view[1] * 0.5, 10),
+                    top : parseInt(view[3] + view[1] * 0.5, 10),
                     left : parseInt(view[2] + view[0] * 0.5, 10)
                 };
             }
@@ -791,8 +798,8 @@
         };
 
     /*
-     * Public methods 
-     */
+* Public methods
+*/
 
     $.fn.fancybox = function(options) {
         if (!$(this).length) {
@@ -973,9 +980,9 @@
 
             currentOpts.onClosed(currentArray, currentIndex, currentOpts);
 
-            currentArray = selectedOpts    = [];
+            currentArray = selectedOpts = [];
             currentIndex = selectedIndex = 0;
-            currentOpts = selectedOpts    = {};
+            currentOpts = selectedOpts = {};
 
             busy = false;
             //EDITADO POR VICTOR ESPINOSA
@@ -988,9 +995,9 @@
             var pos = wrap.position();
 
             final_pos = {
-                top     : pos.top ,
+                top : pos.top ,
                 left : pos.left,
-                width :    wrap.width(),
+                width : wrap.width(),
                 height : wrap.height()
             };
 
@@ -1026,14 +1033,14 @@
         var view, align;
 
         if (busy) {
-            return;    
+            return;
         }
 
         align = arguments[0] === true ? 1 : 0;
         view = _get_viewport();
 
         if (!align && (wrap.width() > view[0] || wrap.height() > view[1])) {
-            return;    
+            return;
         }
 
         wrap
@@ -1048,11 +1055,11 @@
    var _redesSociales ='<div id="_rsBengalaWrappDentro" style="z-index:4000;top:16px; right:0px;width:103px">';
     _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'fb\')"><div class="rsBengala _Rsfb"></div></a>';
     _redesSociales +='<a href="javascript:void(0);" onclick="_rsCompartir(\'tw\')"><div class="rsBengala _Rstw"></div></a>';
-//    _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rsin"></div></a>';
-//    _redesSociales +='<a href="http://vimeo.com/casabengala" target="_blank"><div class="rsBengala _Rsvi"></div></a>';
+// _redesSociales +='<a href="http://twitter.com/casabengala" target="_blank"><div class="rsBengala _Rsin"></div></a>';
+// _redesSociales +='<a href="http://vimeo.com/casabengala" target="_blank"><div class="rsBengala _Rsvi"></div></a>';
     _redesSociales +='</div>';
     
-    var carrWrapp = '<div id=_carrWrapp></div>';
+    var carrWrapp = '<div id="_carrWrapp"></div>';
     
     $.fancybox.init = function() {
         if ($("#fancybox-wrap").length) {
@@ -1060,9 +1067,9 @@
         }
 
         $('body').append(
-            tmp    = $('<div id="fancybox-tmp"></div>'),
-            loading    = $('<div id="fancybox-loading"><div></div></div>'),
-            overlay    = $('<div id="fancybox-overlay"></div>'),
+            tmp = $('<div id="fancybox-tmp"></div>'),
+            loading = $('<div id="fancybox-loading"><div></div></div>'),
+            overlay = $('<div id="fancybox-overlay"></div>'),
             wrap = $('<div id="fancybox-wrap"></div>')
         );
 
@@ -1126,7 +1133,7 @@
         opacity : false,
         modal : false,
         cyclic : false,
-        scrolling : 'auto',    // 'auto', 'yes' or 'no'
+        scrolling : 'auto', // 'auto', 'yes' or 'no'
 
         width : 560,
         height : 340,
@@ -1162,7 +1169,7 @@
         easingIn : 'swing',
         easingOut : 'swing',
 
-        showCloseButton     : true,
+        showCloseButton : true,
         showNavArrows : true,
         enableEscapeButton : true,
         enableKeyboardNav : true,
